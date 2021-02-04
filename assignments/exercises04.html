@@ -46,6 +46,36 @@
 <ol type="a">
 <li>Prove that the Jordan curve theorem follows from the following, if <span class="math inline">\(f : [0,1] \to S^2\)</span> is a continuous map that is homeomorphic onto its image, then <span class="math inline">\(\tilde{H}_0(S^2 \setminus f([0,1])) = 0\)</span>)</li>
 </ol></li>
+<li>For pairs <span class="math inline">\((X_\alpha, x_\alpha)\)</span> where, for each <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(X_\alpha\)</span> is a topological space and <span class="math inline">\(x_\alpha \in X_\alpha\)</span> is a chosen point, the wedge sum <span class="math inline">\(\vee_\alpha X_\alpha := \sqcup_\alpha X_\alpha/\{x_\alpha\}\)</span> is constructed by taking the disjoint union of the <span class="math inline">\(X_\alpha\)</span> and identifying all the base points <span class="math inline">\(x_\alpha\)</span>. If <span class="math inline">\((X_\alpha, x_\alpha)\)</span> are good pairs, and prove the following:
+<ol type="a">
+<li>The inclusion, <span class="math inline">\(i_\alpha : X_\alpha \to \vee_\alpha X_\alpha\)</span> (defined by composing the inclusion to the disjoint union with the quotient map) induces <span class="math inline">\({i_\alpha}_* : \widetilde{H}_n(X_\alpha) \to \widetilde{H}_n(\vee_\alpha X_\alpha)\)</span>.</li>
+<li>Prove that <span class="math inline">\(H_n(\vee_\alpha X_\alpha) = \oplus_\alpha {i_\alpha}_*(H_n(X_\alpha))\)</span></li>
+</ol></li>
+<li>Let <span class="math inline">\(X_0\subset X_1\subset \ldots X_n = X\)</span> be a nested finite sequence of topological spaces. Assume that <span class="math inline">\((X_{i+1}, X_i)\)</span> form a good pair for all <span class="math inline">\(i\)</span> and that the the reduced homologies, <span class="math inline">\(\widetilde{H}_k(X_i/X_{i-1})\)</span> are non-trivial only when <span class="math inline">\(k = i\)</span> <em>(such a situation occurs if <span class="math inline">\(X_k\)</span> denotes the <span class="math inline">\(k\)</span>-skeleton of a simplicial complex, or, as we shall see later in this course, of a CW-complex)</em>.
+<ol type="a">
+<li>Prove that a <span class="math inline">\(k\)</span>-dimensional homology class in <span class="math inline">\(H_k(X)\)</span> has a representative in <span class="math inline">\(H_k(X_k)\)</span> (i.e. <span class="math inline">\(H_k(X_k) \xrightarrow{i_*} H_k(X)\)</span> is surjective).</li>
+<li>Prove that <span class="math inline">\(H_k(X) \cong H_k(X_{k+1})\)</span> (i.e. the <span class="math inline">\(k\)</span>th homology of <span class="math inline">\(X\)</span> depends only on the homology of <span class="math inline">\(X_{k+1}\)</span>).</li>
+</ol></li>
+<li>For a finite subset, <span class="math inline">\(A := \{x_1, x_2, \ldots, x_n\} \subset \mathbb{R}^{N+1}\)</span>
+<ol type="a">
+<li>Prove that <span class="math inline">\(H_N(\mathbb{R}^{N+1}\setminus A) \cong \displaystyle\oplus_{i=1}^n \mathbb{Z}\)</span></li>
+<li>Find maps <span class="math inline">\(f_i : S^N \to \mathbb{R}^{N+1}\setminus A\)</span> so that <span class="math inline">\({f_i}_*\)</span> is injective and maps a generator of <span class="math inline">\(H_N(S^N) \cong \mathbb{Z}\)</span> to a generator of the <span class="math inline">\(i\)</span>th component of <span class="math inline">\(H_N(\mathbb{R}^{N+1}\setminus A) \cong \displaystyle\oplus_{i=1}^n \mathbb{Z}\)</span></li>
+<li>Use the <span class="math inline">\(f_i\)</span> defined above to prove that the inclusion, <span class="math inline">\(\mathbb{R}^{N+1} \setminus A \hookrightarrow \mathbb{R}^{N+1}\setminus x_j\)</span> induces a map from <span class="math inline">\(\displaystyle\oplus_{i=1}^n \mathbb{Z}\to \mathbb{Z}\)</span> that is a projection onto the <span class="math inline">\(i\)</span>th copy of <span class="math inline">\(\mathbb{Z}\)</span>.</li>
+</ol></li>
+<li>Prove the following properties of the degree of a map <span class="math inline">\(f : S^n \to S^n\)</span>:
+<ol type="a">
+<li><span class="math inline">\(\textrm{deg }Id = 1\)</span></li>
+<li><span class="math inline">\(\textrm{deg }f = 0\)</span> if <span class="math inline">\(f\)</span> is not-surjective</li>
+<li>Homotopic maps have the same degrees</li>
+<li>Compute the degree of the antipodal map</li>
+</ol></li>
+<li><p>Realize <span class="math inline">\(S^1\)</span> as the subspace <span class="math inline">\(\{z \ |\ |z| = 1\}\subset \mathbb{C}\)</span> and prove that the map <span class="math inline">\(\theta : S^1 \to S^1\)</span> defined as <span class="math inline">\(\theta(z) = z^k\)</span> has degree <span class="math inline">\(k\)</span>.</p></li>
+<li>Let <span class="math inline">\(A\)</span> denote the complement of <span class="math inline">\(k\)</span> disjoint open subsets of <span class="math inline">\(S^n\)</span> that are each homeomorphic to open dics of dimension <span class="math inline">\(n\)</span>.
+<ol type="a">
+<li>Show that <span class="math inline">\(S^n/A\)</span> is homeomorphic to a wedge sum of <span class="math inline">\(k\)</span> <span class="math inline">\(n\)</span>-spheres.</li>
+<li>Prove that it is possible to glue the homeorphisms from each sphere in the wedge to <span class="math inline">\(S^n\)</span> to define a surjection, <span class="math inline">\(p : S^n/A \to S^n\)</span>.</li>
+<li>Define the map <span class="math inline">\(f : S^n \to S^n\)</span> as the composition, <span class="math inline">\(S^n \xrightarrow{q} S^n/A \xrightarrow{p} S^n\)</span>. What is its degree <em>(Hint: use the local degree formulation)</em>?</li>
+</ol></li>
 </ol>
 </section>
 </article>
