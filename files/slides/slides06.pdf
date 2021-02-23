@@ -1,0 +1,544 @@
+\subsubsection{CW-complex}
+\begin{tikzpicture}
+  \filldraw (-1,0)  circle(2pt);||
+\normal<rmln>{\draw (1,-1) -- (1,1);\filldraw (1,1) circle(2pt); \filldraw (1,-1) circle(2pt);}||%%%<rmln> %clear %%%<>
+\draw (0,0)  circle(1);||
+\fill [fill=gray] (0,0)  circle(1);
+\filldraw (-1,0)  circle(2pt);||
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\filldraw (3,0)  circle(2pt);||
+\normal<rmln>{\draw (0,-1) -- (0,1);\filldraw (0,1) circle(2pt); \filldraw (0,-1) circle(2pt);}||%%%<rmln> %clear %%%<>
+\draw (2,0)  circle(1);||
+\normal<rmln>{\draw (7,-1) -- (7,1);\filldraw (7,1) circle(2pt); \filldraw (7,-1) circle(2pt);}||%%%<rmln> %clear %%%<>
+\draw (5,0)  ellipse(2 and 0.5);||
+\draw[fill=gray] (8,-1)  rectangle (10,1);||
+\begin{scope}[shift={(13,0)}, scale=0.5]
+\node at (-5,0) {=};
+\draw (-2,0) .. controls (-1,-1) and (1,-1) .. (2,0);
+\draw (-1.5,-0.4) .. controls (-1,0.5) and (1,0.5) .. (1.5,-0.4);
+\draw (0,-0.3)  ellipse(4 and 2);||
+\filldraw (-1.55,-0.3)  circle(2pt);
+\draw (-2.7,-0.3)  ellipse(1.25 and 0.75);||
+\end{scope}
+\end{tikzpicture}
+
+$X_0$: set of points\\||
+
+$\phi_\alpha : S^{n-1}= \partial D^n_\alpha  \to X_{n-1}$\\||
+$X_n = X_{n-1}\sqcup D^n_\alpha / \sim$, where $y \sim \phi_\alpha(x)$\\||
+
+$X = \cup X_i$||, and $U$ open in $X$ if and only if $U\cap X_i$ open in each $X_i$.\\||
+
+\begin{exercise}
+  Prove that the spheres (any dimension), torus, projective plane, Klein bottle, and any compact surface are all CW-complexes||
+\end{exercise}
+
+\newpage
+
+$e^n_\alpha = D^n_\alpha \setminus \partial D^n_\alpha$\\||
+$X_n \setminus X_{n-1} = \sqcup e^n_\alpha$\\||
+$\Phi_\alpha : D^n_\alpha \to X$|| (characteristic map)\\||
+$\Phi_\alpha|_{\partial D^n_\alpha} = \phi$ \\||
+$\Phi_\alpha|_{Int\ D^n_\alpha}$ is a homeomorphism onto $e^N_\alpha$\\||
+
+$(X_n,X_{n-1})$ is a good pair\normal<qmrk>{?}\\||%<qmrk> -> .
+||$H_k(X_n,X_{n-1})|| \cong \widetilde{H}_k(X_n/X_{n-1})|| \cong \widetilde{H}_k(\vee S^n)$
+
+\[
+H_k(X_n,X_{n-1}) = ||
+  \begin{cases}
+\oplus\mathbb{Z} & k = n||\\
+0 & k \neq n
+  \end{cases}
+  \]||
+
+
+
+||%clear
+\onecolumn
+\normal<toclear>{$\normal<zero1>{H_{n+1}(X_{\normal<k>{k}},X_{\normal<km>{k-1}})} \to H_{n}(X_{\normal<km>{k-1}}) \normal<arr>{\to} H_{n}(\normal<spc>{X_{\normal<k>{k}}}) \to \normal<zero2>{H_{n}(X_{\normal<k>{k}},X_{\normal<km>{k-1}})}$}
+
+||%<k> -> n+2
+%<km> -> n+1
+%<zero1> \undrbrc{=0}
+%<zero2> \undrbrc{=0}
+%<arr> -> \xrightarrow{\sim}
+
+||\normal<frame1>{$H_n(X_{n+1}) \cong H_n(X_{n+2})\normal<cong>{}$}\\
+
+||%<k> -> n+3
+%<km> -> n+2
+
+%%%<cong> \cong H_n(X_{n+3}) || \cong \ldots%%%<>
+||%<frame1> \fbox
+
+
+
+
+
+||%<k> -> n-1
+%<km> -> n-2
+
+
+||\normal<frame2>{$H_n(X_{n-1}) \cong H_n(X_{n-2})\normal<cong2>{}$\normal<cond>{}}
+
+
+||%<k> -> n-2
+%<km> -> n-3
+
+%%%<cong2> \cong H_n(X_{n-3}) || \cong \ldots || \cong H_n(X_0) \cong 0\\%%%<>
+%%%<cond> (if $n > 0$) %%%<>
+
+||%<frame2> \fbox
+
+
+||%<k> -> n + 1
+%<km> -> n
+
+%<zero1> \normal
+%<arr> -> \to 
+||%%%<zero2> %clear 0  %%%<>
+||%<spc> -> X
+%%%<cong> \cong H_n(X) \textrm{ exercise! } %%%<>
+
+
+||\vspace{1cm}%%%<toclear> %clear %%%<>
+
+\begin{tcolorbox}
+\begin{tikzcd}
+  \normal<before>{}  \normal<clr2>{H_{n+1}(X_{n+1},X_n)}\arrow{r}{\partial_{n+1}}\normal<xx>{} & H_n(X_n) \normal<ard1>{} \arrow{r} & H_n(X_{n+1}) \cong H_n(X)\to 0\\ \normal<low>{}
+\end{tikzcd}
+\end{tcolorbox}
+
+\vspace{1cm}
+||$\normal<cmt>{H_n(X) \cong H_n(X_n)/Im\ \partial_{n+1}}$
+
+||%%%<low>
+& \normal<clr2>{H_n(X_n,X_{n-1})}\normal<ard2>{}\normal<ard>{} & \\  \normal<nm1>{}%%%<>
+%<ard1> -> \arrow{d}{j_n}
+
+||%%%<before> & H_n(X_{n-1}) \arrow{d} = 0 & \\
+%%%<>
+||%%%<cmt> \cong j_n(H_n(X_n))/Im\ (j_n\circ\partial_{n+1}) %%%<>
+
+
+||%%%<nm1>
+\normal<bf2>{} & H_{n-1}(X_{n-1})\normal<arr3>{} &  \normal<nm2>{}%%%<>
+%<ard2> -> \arrow{d}{\partial_n}
+
+||%%%<cmt> \cong ker\ \partial_n/Im\ (j_n\circ\partial_{n+1}) %%%<>
+
+
+||%%%<nm2> \normal<clr2>{H_{n-1}(X_{n-1},X_{n-2})} %%%<>
+%<arr3> -> \arrow{r}{j_{n-1}}
+%%%<bf2> H_{n-1}(X_{n-2})\cong 0\arrow{r} %%%<>
+
+
+||%%%<cmt> \cong ker\ (j_{n-1}\circ \partial_n)/Im\ (j_n\circ\partial_{n+1}) %%%<>
+
+%%%<ard> \arrow[\normal<clr>{}]{rd}{d_{n}} %%%<>
+%%%<xx> \arrow[\normal<clr>{}]{rd}{d_{n+1}} %%%<> 
+||%%%<cmt> \cong ker\ d_n/Im\ d_{n+1} %%%<>
+%<clr> -> color=red
+%<clr2> \clr{red}
+
+
+||%clear
+\begin{tikzcd}
+  \normal<above>{}H_n(X_n, X_{n-1}) \arrow{r}{\partial_n}\arrow{rd}{d_n} & H_{n-1}(X_{n-1})\arrow{d}{j} \normal<q2a>{} & \normal<q2>{}\\
+  & H_{n-1}(X_{n-1},X_{n-2})\normal<qa>{} & \normal<q>{}
+\end{tikzcd}
+
+||%%%<above> H_n(D^n, \partial D^n)\arrow{d}{\Phi_*}\normal<simplifya>{} & \normal<simplify>{} & \normal<simplest>{} \\ %%%<>
+\normal<tofold>{$d_n(\normal<bet>{\Phi_*(1)})\normal<eq>{}$}
+
+||%%%<simplify> H_{n-1}(\partial D^n) \normal<farr>{} %%%<>
+%%%<simplifya> \arrow{r}{\partial_n'} %%%<>
+%%%<bet> %clear \Phi_*({\partial'_n}^{-1}(1)) %%%<>
+
+||%%%<eq>  = j (\partial_n (\Phi_*({\partial'_n}^{-1}(1)))) %%%<>
+
+||%%%<simplify> \arrow{d}{\phi_*}} %%%<>
+%%%<eq>  = j (\phi_*(1))%%%<>
+
+
+
+
+
+
+||
+\normal<tofold>{
+$j(\phi_*(1)) = \Sigma_in_ig_i$\\||%%%<q> H_{n-1}(X_{n-1}/X_{n-2},X_{n-2}/X_{n-2}) %%%<> %<qa> -> \arrow{r}{q_*}
+$q_*(j(\phi_*(1))) = \Sigma_in_iq_*(g_i)$\\ ||%%%<q2> H_{n-1}(X_{n-1}/X_{n-2})\arrow{d}{j'}\normal<aru>{} %%%<> 
+${j'_*}^{-1}(q_*(j(\phi_*(1)))) = \Sigma_in_i{j'_*}^{-1}(q_*(g_i))$\\ ||%<q2a> -> \arrow{r}{q'_*}
+$q'_*(\phi_*(1)) = \Sigma_in_i{j'_*}^{-1}(q_*(g_i))$\\||
+}
+
+\normal<tofold>{
+\begin{lemma}
+$H_{n-1}(X_{n-1}/X_{n-2}) \cong \vee S^{n-1}_\alpha ||\xrightarrow{q''} S^{n-1}_\beta$|| induces $q''_* : \oplus_{\alpha} \mathbb{Z} \to \mathbb{Z}$,|| which is a projection onto the $\beta$th term.
+\end{lemma}
+||%%%<simplest> S^{n-1}_\beta %%%<>
+%<aru> -> \arrow{u}{q''}
+||%<farr> -> \arrow[very thick]{r}
+}
+
+||%%%<tofold>%clear  %%%<>
+\begin{tikzcd}
+\partial D^n\arrow{d}{\phi} & S^{n-1}_\beta\\
+X_{n-1} \arrow{r}{q'}& X_{n-1}/X_{n-2}\arrow{u}{q''}
+\end{tikzcd}
+
+||%clear
+\subsubsection{Summary of cellular homology}
+$H_n(X_n,X_{n-1}) = \oplus_\alpha \mathbb{Z}$||
+
+Genarators $g^n_\alpha$ correspond to $n$-cells $e_\alpha$||
+
+
+$\to H_{n+1}(X_{n+1}, X_n) \xrightarrow{d_{n+1}} H_{n}(X_{n}, X_{n-1}) \xrightarrow{d_n} H_{n}(X_{n}, X_{n-1}) \to$
+
+||$d_n \circ d_{n+1} = 0$
+
+$H_n(X) = ker\ d_n/Im\ d_{n+1}$\\
+
+||$d_n(g^n_\alpha) = \Sigma n_{\alpha,\beta} g_\beta^{n-1}$ 
+
+||To find $n_{\alpha,\beta}$,
+
+||Let $\phi_\alpha : \partial D^n_\alpha \to X_{n-1}$ be the gluing map.
+
+||Compose with $q : X_{n-1} \to X_{n-1}/ (X_{n-1} \setminus e_\beta)\cong S^{n-1}$,||
+
+$q \circ \phi_\alpha : S^{n-1} \cong \partial D^{n-1} \to X_{n-1}/ (X_{n-1} \setminus e_\beta)\cong S^{n-1}$||
+
+$n_{\alpha,\beta} = \textrm{degree }(q \circ \phi_\alpha)$
+
+||%clear
+\twocolumn
+Recall:
+
+$\phi : S^n \to S^n$\\||
+
+For $y \in S^n$, $\phi^{-1}(y) = \{x_1, \ldots, x_k\}$||
+
+$\textrm{degree } \phi = \Sigma_i \textrm{ degree } \phi |_{x_i}$\\
+
+||$\phi|_{U_i} : H_n(U_i, U_i\setminus x_i) \to  H_n(V, V\setminus y)$
+
+||$(\phi_{U_i})_*$ is multiplication by $\textrm{ degree } \phi |_{x_i}$||
+
+
+\begin{tikzcd}
+  \normal<sn>{}\normal<sna>{}& H_n(S^n, S^n\setminus x_i)\normal<rot>{} & \arrow{l}{}{\sim}H_n(U_i, U_i\setminus x_i)\normal<rot2>{}\\
+  \normal<clr>{H_n(S^n)\arrow{ur}\arrow{dr}} & & \\
+\normal<sn>{}& H_n(S^n, S^n\setminus x_j) & \arrow{l}{}{\sim} H_n(U_j, U_j\setminus x_j)\\
+\end{tikzcd}
+
+||\newpage
+$\theta : S^n \to S^n$, ||such that $\theta(x_i)= x_j$,|| $\theta(U_i) = U_j$ and $\theta \sim Id$\\||
+
+$\theta_* = Id$||
+
+%%%<clr> %clear %%%<>
+
+%<sn> -> H_n(S^n)\arrow{r}
+
+
+
+
+%<sna> -> \arrow{dd}{Id}
+%<rot> -> \arrow{dd}{\theta}
+||%<rot2> -> \arrow{dd}{\theta|_{U_i}}
+
+
+
+
+||%clear
+\twocolumn
+$V := (-1,1)\subset \mathbb{R}$
+
+$\tau(t) = -t$||
+
+$\tau_*: \normal<z>{\widetilde{H}_1(V,V\setminus 0)} \to \normal<z>{\widetilde{H}_1(V,V\setminus 0)}$||
+
+
+
+
+What is $\tau_* = \normal<q>{?}$
+||%<z> \undrbrc{\mathbb{Z}}
+%
+
+||\emph{Solution:}
+
+||$I := [-1/2, 1/2]$
+
+\begin{tikzcd}
+  \widetilde{H}_1(I,\partial I) \arrow{r}{i_*}\normal<tau1>{} & \widetilde{H}_1(V,V\setminus 0)\normal<tau2>{} ||\\
+\widetilde{H}_1(I,\partial I) \arrow{r}{i_*} & \widetilde{H}_1(V,V\setminus 0) \\
+\end{tikzcd}
+
+%<tau1> -> \arrow{d}{\tau'_*}
+||%<tau2> -> \arrow{d}{\tau_*}
+%%
+
+\begin{eqnarray*}
+\tau'_*(g) = n g ||& \implies & i_*(\tau'_*(g)) = n i_*(g)\\|| &\implies & \tau_*(i_*(g)) = n (i_*(g))||
+\end{eqnarray*}
+\newpage
+
+
+$\tau': (I,\partial I) \to (I,\partial I)$||
+
+$\tau'(t) = -t$||
+
+$\tau': \widetilde{H}_1(I,\partial I) \to \widetilde{H}_1(I,\partial I)$||
+
+$\tau'_* = \normal<q>{?}$||
+
+\begin{tikzcd}
+  \widetilde{H}_1(I,\partial I)\normal<t1>{}\arrow{r}{\partial} & \widetilde{H}_0(\partial I)\normal<t2>{}\\||
+  \widetilde{H}_1(I,\partial I)\arrow{r}{\partial}& \widetilde{H}_0(\partial I)\\||
+\end{tikzcd}
+%<t1> -> \arrow{d}{\tau'_*}
+%<t2> -> \arrow{d}{\tau'_*}
+||
+
+$\tau'_* = -Id$||
+
+Therefore, 
+$\tau_* = -Id$
+
+
+
+
+
+
+||%clear
+
+\subsubsection{Example: $S^n$}||
+
+\begin{description}
+  \item[0 cells] 1|| ($H_0(X_0) = \mathbb{Z}$)||
+  \item[n cells] 1|| ($H_n(X_n,X_{n-1}) = \mathbb{Z}$)||
+\end{description}
+
+\begin{tikzcd}
+H_n(X_{n+1},X_{n}) \arrow{r} & H_n(X_n,X_{n-1}) \arrow{r} & H_n(X_{n-1},X_{n-2}) \arrow{r} & \ldots \arrow{r}& H_0(X_0)\\||
+0\arrow{r} & \mathbb{Z} \arrow{r} & 0 \arrow{r} & \ldots \arrow{r}& \mathbb{Z}||
+\end{tikzcd}
+
+\[H_k(S^n) = 
+  \begin{cases}
+    \mathbb{Z} & k = 0, n\\||
+    0 & \textrm{otherwise}
+  \end{cases}
+  \]
+
+||%clear
+
+\subsubsection{Example: $\mathbb{RP}^2$}||
+
+\begin{tikzpicture}
+  \filldraw (-1,0)  circle(2pt);||
+\normal<rmln>{\draw (1,-1) -- (1,1);\filldraw (1,1) circle(2pt); \filldraw (1,-1) circle(2pt);}||%%%<rmln> %clear %%%<>
+\draw (0,0)  circle(1);||
+\draw [fill=gray] (4,0)  circle(1);||
+\end{tikzpicture}
+
+\begin{description}
+  \item[0 cells] 1|| ($H_0(X_0) = \mathbb{Z}$)||
+  \item[1 cells] 1|| ($H_1(X_1,X_0) = \mathbb{Z}$)||
+  \item[2 cells] 1|| ($H_2(X_2,X_1) = \mathbb{Z}$)||
+\end{description}
+\newpage
+\begin{tikzcd}
+H_2(X_2,X_1) \arrow{r} & H_1(X_1,X_0) \arrow{r} & H_0(X_0)\\||
+\mathbb{Z}\arrow{r}{\normal<mp1>{}} & \mathbb{Z} \arrow{r}{\normal<mp2>{}} & \mathbb{Z} ||
+\end{tikzcd}
+||%<mp2> -> 0
+||%<mp1> -> \times 2
+
+
+
+||\[H_k(\mathbb{RP}^2) = 
+  \begin{cases}
+    \mathbb{Z} & k=0\\||
+     \mathbb{Z}/2 & k=1\\||
+     0 & \textrm{otherwise}
+  \end{cases}
+  \]
+
+
+
+||%clear
+
+\subsubsection{Example: $S^1\times S^1$}||
+
+\begin{tikzpicture}
+\filldraw (3,0)  circle(2pt);||
+\normal<rmln>{\draw (0,-1) -- (0,1);\filldraw (0,1) circle(2pt); \filldraw (0,-1) circle(2pt);}||%%%<rmln> %clear %%%<>
+\draw (2,0)  circle(1);||
+\normal<rmln>{\draw (7,-1) -- (7,1);\filldraw (7,1) circle(2pt); \filldraw (7,-1) circle(2pt);}||%%%<rmln> %clear %%%<>
+\draw (5,0)  ellipse(2 and 0.5);||
+\draw[fill=gray] (8,-1)  rectangle (10,1);||
+\begin{scope}[shift={(13,0)}, scale=0.5]
+\node at (-5,0) {=};
+\draw (-2,0) .. controls (-1,-1) and (1,-1) .. (2,0);
+\draw (-1.5,-0.4) .. controls (-1,0.5) and (1,0.5) .. (1.5,-0.4);
+\draw (0,-0.3)  ellipse(4 and 2);||
+\filldraw (-1.55,-0.3)  circle(2pt);
+\draw (-2.7,-0.3)  ellipse(1.25 and 0.75);||
+\end{scope}
+\end{tikzpicture}
+\begin{description}
+  \item[0 cells] 1|| ($H_0(X_0) = \mathbb{Z}$)||
+  \item[1 cells] 2|| ($H_1(X_1,X_0) = \mathbb{Z}\oplus \mathbb{Z}$)||
+  \item[2 cells] 1|| ($H_2(X_2,X_1) = \mathbb{Z}$)||
+\end{description}
+\newpage
+\begin{tikzcd}
+H_2(X_2,X_1) \arrow{r} & H_1(X_1,X_0) \arrow{r} & H_0(X_0)\\||
+\mathbb{Z}\arrow{r}{\normal<mp1>{}} & \mathbb{Z}\oplus \mathbb{Z} \arrow{r}{\normal<mp2>{}} & \mathbb{Z} ||
+\end{tikzcd}
+||%<mp2> -> 0
+||%<mp1> -> 0
+
+
+
+||\[H_k(S^1 \times S^1) = 
+  \begin{cases}
+    \mathbb{Z} & k = 0\\||
+    \mathbb{Z}\oplus \mathbb{Z} & k=1\\||
+    \mathbb{Z} & k = 2\\||
+    0 & \textrm{otherwise}
+  \end{cases}
+  \]
+
+
+||%clear
+
+\subsubsection{Example: Klein bottle}||
+
+\begin{tikzpicture}
+\filldraw (3,0)  circle(2pt);||
+\normal<rmln>{\draw (0,-1) -- (0,1);\filldraw (0,1) circle(2pt); \filldraw (0,-1) circle(2pt);}||%%%<rmln> %clear %%%<>
+\draw (2,0)  circle(1);||
+\normal<rmln>{\draw (7,-1) -- (7,1);\filldraw (7,1) circle(2pt); \filldraw (7,-1) circle(2pt);}||%%%<rmln> %clear %%%<>
+\draw (5,0)  ellipse(2 and 0.5);||
+\draw[fill=gray] (8,-1)  rectangle (10,1);||
+\end{tikzpicture}
+\begin{description}
+  \item[0 cells] 1|| ($H_0(X_0) = \mathbb{Z}$)||
+  \item[1 cells] 2|| ($H_1(X_1,X_0) = \mathbb{Z}\oplus \mathbb{Z}$)||
+  \item[2 cells] 1|| ($H_2(X_2,X_1) = \mathbb{Z}$)||
+\end{description}
+\newpage
+\begin{tikzcd}
+H_2(X_2,X_1) \arrow{r} & H_1(X_1,X_0) \arrow{r} & H_0(X_0)\\||
+\mathbb{Z}\arrow{r}{\normal<mp1>{}} & \mathbb{Z}\oplus \mathbb{Z} \arrow{r}{\normal<mp2>{}} & \mathbb{Z} ||
+\end{tikzcd}
+||%<mp2> -> 0
+||%<mp1> -> 1\to (0, 2)
+
+
+
+||\[H_k(S^1 \times S^1) = 
+  \begin{cases}
+    \mathbb{Z} & k = 0\\||
+    \mathbb{Z}\oplus \mathbb{Z}/2 & k=1\\||
+    0 & \textrm{otherwise}
+  \end{cases}
+  \]
+
+  ||%clear
+  $G$ abelian, $G \cong \oplus_{i=1}^k\mathbb{Z}\oplus \textrm{torsion part}$\\||
+  $\textrm{rank }G = k$\\||
+
+  
+  \begin{theorem}
+  $A$, $B$, $C$, finitely generated, abelian\\||
+  $0 \to A \to B\to C\to 0$  short exact\\||
+  then, $\textrm{rank }B = \textrm{rank }A + \textrm{rank }C$
+  \end{theorem}
+
+  \begin{proof}
+    $0 \to \oplus_{i=1}^m \mathbb{Z}\oplus  T \xrightarrow{i} \oplus_{i=1}^n \mathbb{Z}\oplus T'\to F\oplus T'' \to 0$ ||\\
+
+    Injectivity of $i$ $\implies$ free maps to free||, each generator maps to a different copy of $\mathbb{Z}$.||
+
+    Those copies will become torsion in $B/i(A)$||
+  \end{proof}
+
+  $C_n := H_n(X_n, X_{n-1})$ (number of cells of dimension $n$)\\||
+  
+$\textrm{rank }H_n(X) = \textrm{rank }ker\ d_n - \textrm{rank }Im\ d_{n+1}$\\||
+$\textrm{rank }ker\ d_n = \textrm{rank }C_n - \textrm{rank }Im\ d_{n}$\\||
+$\textrm{rank }H_n(X) =  \textrm{rank }C_n - \textrm{rank }Im\ d_{n}- \textrm{rank }Im\ d_{n+1}$\\||
+
+\newpage
+$\textrm{rank }H_0(X) =  \textrm{rank }C_0 - \textrm{rank }Im\ d_{0}- \textrm{rank }Im\ d_{1}$\\||
+$\textrm{rank }H_1(X) =  \textrm{rank }C_1 - \textrm{rank }Im\ d_{1}- \textrm{rank }Im\ d_{2}$\\||
+$\textrm{rank }H_2(X) =  \textrm{rank }C_2 - \textrm{rank }Im\ d_{2}- \textrm{rank }Im\ d_{3}$\\||
+$\cdots$
+
+$\normal<chi>{}\Sigma(-1)^n \textrm{rank }H_n(X) = \Sigma(-1)^n \textrm{rank }C_n$ ||\\ (Euler characteristic)
+%<chi> ->  \chi(X) =
+
+
+||%clear
+\onecolumn
+Prove that the quotient map $q : S^1 \times S^1 \to (S^1\times S^1)/(x_0 \times S^1)$, where $x_0\in S^1$, induces on isomorphism $q_* :  H_2(S^1 \times S^1) \to H_2((S^1\times S^1)/(x_0 \times S^1))$.||\\
+
+$\normal<z>{H_2(x_0 \times S^1)}\to H_2(S^1 \times S^1) \to H_2((S^1\times S^1)/(x_0 \times S^1)) \to H_1(x_0 \times S^1)\xrightarrow{i_*} H_1(S^1 \times S^1)$||
+
+%<z> \undrbrc{0}
+%
+
+||$r : S^1 \times S^1 \to x_0 \times S^1$, $r(x,y) = (x_0,y)$
+
+||$r \circ i = Id$
+
+||$r_* \circ i_* = Id_*$
+
+||$i_*$ injective
+
+
+||$q_*$ is an isomorphism
+
+||%clear
+
+Let $p_1$, $p_2$, and $p_3$ denote 3 distinct points chosen on $S^2$.
+  \begin{enumerate}
+  \item Compute $H_i(S^2\setminus \{p_1,p_2,p_3\})$ for all $i\geq 0$.||
+    \normal<parta>{}
+  %\item Find an inclusion $i : S^1 \to S^2\setminus \{p_1,p_2,p_3\}$ that induces an inclusion $i_* : H_1(S^1) \to H_1(S^2\setminus \{p_1,p_2,p_3\})$
+  \item Compute $H_i(S^2 / \{p_1,p_2,p_3\})$ for all $i\geq 0$.||
+    \normal<partb>{}
+  \end{enumerate}
+
+  %%%<parta>
+  \emph{Solution:} $S^2\setminus \{p_1,p_2,p_3\} \cong \mathbb{R}^2\setminus \textrm{ two points }$, which deformation retracts to the wedge of two circles...
+  %%%<>
+  %%%<partb> 
+||\emph{Solution:} $\widetilde{H}_i(S^2) \xrightarrow{\sim} \widetilde{H}_i(S^2 / \{p_1,p_2,p_3\})$||, if $i>1$
+
+$0 \to \normal<z>{\widetilde{H}_1(S^2)} \to H_1(S^2 , \{p_1,p_2,p_3\}) \to \mathbb{Z}\oplus \mathbb{Z}\to 0$
+||%<z> \undrbrc{0}
+
+ %%%<>
+||%clear
+Let $r : S^1 \times S^1 \to S^1$ denote the map $r(s,t) = s$. Prove that $r_* : H_1(S^1\times S^1) \cong \mathbb{Z}\oplus\mathbb{Z} \to H_1(S^1)\cong \mathbb{Z}$ is the projection onto the first factor.
+
+
+
+
+
+
+
+
+
+
+
